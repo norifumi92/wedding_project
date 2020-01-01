@@ -21,8 +21,10 @@ from my_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # configured the url
+    #index route
     path('',views.index, name="home"),
-
+    
+    #wedding route
+    path('wedding',views.wedding, name="wedding")
 ]
 
