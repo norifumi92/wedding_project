@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'my_app',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'wedding_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,7 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'debug': DEBUG,
+            #'debug': DEBUG,
         },
     },
 ]
@@ -110,7 +113,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Change 'default' database configuration with $DATABASE_URL.
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require=True))
+#DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
