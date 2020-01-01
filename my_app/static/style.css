@@ -12,7 +12,7 @@ h1,h2 {
 .first-block{
     width: 100%;
     height: 800px;
-    background-image: url( '/static/background.jpg' );
+    background-image: url( '/static/img/background.jpg' );
     /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
     /* Background image doesn't tile */
@@ -65,11 +65,11 @@ h1,h2 {
     }
     
     .bg01 {
-        background-image: url( '/static/background.jpg' );
+        background-image: url( '/static/img/background.jpg' );
     }
     
     .bg02 {
-        background-image: url( '/static/background.jpg' );
+        background-image: url( '/static/img/background.jpg' );
     }
 
     .scroll-bg {
