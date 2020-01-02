@@ -4,11 +4,13 @@ h1,h2 {
 
 .header {
     height: 10%;
+    padding-top: 3%;
 }
 
 .section {
     height: 10%;
-    padding-left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .first-block{
     width: 100%;
@@ -90,7 +92,7 @@ h1,h2 {
 
     .scroll-bg {
         height: 600px;
-        margin: 20px;
+        margin: 3%;
         color: #888888;
         background-color: white;
     }
