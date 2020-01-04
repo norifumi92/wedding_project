@@ -102,9 +102,16 @@ h1,h2 {
         background-color: white;
     }
 
-    #logo{
-        width: 60px;
-        height: 60px;
+    #grab-logo{
+        width: 80px;
+        height: 8   0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #whatsapp-logo{
+        width: 160px;
+        height: 80px;
         margin-left: auto;
         margin-right: auto;
     }
