@@ -10,9 +10,17 @@
 </head>
 <body>
     <div class="container-fluid fixed-bg">
+        <div class="scroll-bg-letter">
+            <div class="row justify-content-center letter-pudding">
+            </div>
+            <div class="row justify-content-center letter-header">
+                <p>The families of Mrs.Rosiah and Mr&Mrs Irie <br>
+                invite you to the wedding of their children</p>
+            </div>
+        </div>
         <div class="scroll-bg">
             <div class="row justify-content-center header">
-            <h2>Wedding Info</h2>
+            <h2>Event Details</h2>
             </div>
             <div class="row justify-content-start section">
                     <p>
@@ -90,8 +98,13 @@
                         <b>Contact</b><br>
                         For any inquiry, please feel free to contact us via Whatsapp. Clicking the number below, you can text us.
                         If you do not have Whatsapp, you may download it from the Whatsapp logo at the bottom.<br>
+                        <br>
+                        Rosiah Dahlan: <a href="https://api.whatsapp.com/send?phone=60192401002&text=Hi%20Rosiah!">+60192401002</a><br>
+                        Amirul Shafiq: <a href="https://api.whatsapp.com/send?phone=60193988786&text=Hi%20Amirul!">+60193988786</a><br>
+                        Amira Shahira: <a href="https://api.whatsapp.com/send?phone=60192933005&text=Hi%20Amira!">+60192933005</a><br>
+                        Latifah Dahlan: <a href="https://api.whatsapp.com/send?phone=60122091351&text=Hi%20Latifah!">+60122091351</a><br>
+                        Amira Shahida: <a href="https://api.whatsapp.com/send?phone=818078121953&text=Hi%20Amira!">+818078121953</a><br>
                         Norifumi Irie: <a href="https://api.whatsapp.com/send?phone=60135335642&text=Hi%20Nori!">+60135335642</a><br>
-                        Amira Shahida Ibrahim: <a href="https://api.whatsapp.com/send?phone=818078121953&text=Hi%20Amira!">+818078121953</a><br>
                     </p>
             </div>
             <div class="row justify-content-center section">
@@ -104,7 +117,6 @@
             <h2>Entry Form</h2>
             </div>
             <div class="row justify-content-center section">
-            <div class="is-mobile">
             <form action="{% url 'wedding' %}" method="post">
                 {% csrf_token %}
                 {% for field in form %}
@@ -119,7 +131,6 @@
                     <input class="submit" type="submit" value="Submit">
                 </div>
             </form>        
-            </div>
             </div>
         </div>
     </div>
