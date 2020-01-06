@@ -29,6 +29,6 @@ class EntryForm(forms.Form):
     last_name = forms.CharField(label='Last Name', max_length=50, required=True, widget=forms.TextInput(attrs={'placeholder': '',}))
     email = forms.EmailField(required=True)
     phone_number = forms.CharField(label='Phone Number (Whatsapp)',max_length=15)
-    Gender = forms.CharField(required=True, widget=forms.Select(choices=GENDER_OPTIONS))
+    gender = forms.CharField(required=True, widget=forms.Select(choices=GENDER_OPTIONS))
     nationality = forms.CharField(widget=forms.Select(choices=COUNTRY_OPTIONS))
     meal_preference = forms.CharField(widget=forms.Select(choices=MEAL_OPTIONS))
