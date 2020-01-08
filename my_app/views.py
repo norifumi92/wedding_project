@@ -29,7 +29,7 @@ def wedding(request):
             model.save()
 
             # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            return HttpResponseRedirect('/thanks')
 
     else:
         form = AttendeeModelForm()
