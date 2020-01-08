@@ -27,7 +27,7 @@ def wedding(request):
             #register data
             model = form.save(commit=False)
             model.save()
-            
+
             # redirect to a new URL:
             return HttpResponseRedirect('/thanks/')
 
@@ -35,3 +35,8 @@ def wedding(request):
         form = AttendeeModelForm()
         #return HttpResponse('Hello, World!')
         return render(request, 'wedding.html', {'form': form})
+
+def thanks(request):
+    
+    #render html
+    return render(request, 'thanks.html')

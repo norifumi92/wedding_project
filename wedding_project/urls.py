@@ -25,6 +25,9 @@ urlpatterns = [
     path('',views.index, name="home"),
     
     #wedding route
-    path('wedding',views.wedding, name="wedding")
+    path('wedding',views.wedding, name="wedding"),
+
+    #thanks route
+    path('thanks', views.thanks, name="thanks")
 ]
 
