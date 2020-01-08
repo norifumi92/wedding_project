@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
 #add entry form
-from .forms import EntryForm
+from .forms import AttendeeModelForm
 
 # index page
 def index(request):
@@ -16,7 +16,7 @@ def wedding(request):
 
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        form = EntryForm(request.POST)
+        form = AttendeeModelForm(request.POST)
         
         # check whether it's valid:
         if form.is_valid():
@@ -26,6 +26,6 @@ def wedding(request):
             return HttpResponseRedirect('/thanks/')
 
     else:
-        form = EntryForm()
+        form = AttendeeModelForm()
         #return HttpResponse('Hello, World!')
         return render(request, 'wedding.html', {'form': form})

@@ -1,4 +1,9 @@
 from django import forms
+#add ModelForm
+from django.forms import ModelForm
+
+#import Model
+from my_app.models import Attendee
 
 GENDER_OPTIONS= [
     ('', ''),
@@ -12,6 +17,9 @@ COUNTRY_OPTIONS= [
     ('The United Sates', 'The United Sates'),
     ('Malaysia', 'Malaysia'),
     ('India', 'India'),
+    ('China', 'China'),
+    ('The Philippines', 'The Philippines'),
+    ('Indonesia', 'Indonesia'),
     ('France', 'France'),
     ('Poland', 'Poland'),
     ('Laos', 'Laos'),
@@ -19,16 +27,20 @@ COUNTRY_OPTIONS= [
 
 MEAL_OPTIONS= [
     ('None', 'None'),
-    ('Vegitarian', 'Vegitarian'),
+    ('Vegetarian', 'Vegetarian'),
 ]
 
-class EntryForm(forms.Form):
-
-    first_name = forms.CharField(label='First Name', max_length=50, widget=forms.TextInput(attrs={'placeholder': '',}))
-    middle_name = forms.CharField(label='Middle Name', max_length=50, required=False, widget=forms.TextInput(attrs={'placeholder': '',}))
-    last_name = forms.CharField(label='Last Name', max_length=50, required=True, widget=forms.TextInput(attrs={'placeholder': '',}))
-    email = forms.EmailField(required=True)
-    phone_number = forms.CharField(label='Phone Number (Whatsapp)',max_length=15)
-    gender = forms.CharField(required=True, widget=forms.Select(choices=GENDER_OPTIONS))
-    nationality = forms.CharField(widget=forms.Select(choices=COUNTRY_OPTIONS))
-    meal_preference = forms.CharField(widget=forms.Select(choices=MEAL_OPTIONS))
+class AttendeeModelForm(ModelForm):
+    class Meta:
+        model = Attendee
+        #select fields to be used
+        fields = '__all__'
+        widgets = {
+            'first_name': forms.TextInput(attrs={'placeholder': 'Name'}),
+            'gender': forms.Select(choices=GENDER_OPTIONS),
+            'nationality': forms.Select(choices=COUNTRY_OPTIONS),
+            'meal_preference': forms.Select(choices=COUNTRY_OPTIONS)
+        }
+        labels = {
+            'phone_number': 'Phone Number (Whatsapp)',
+        }
