@@ -6,6 +6,9 @@ from django.http import HttpResponseRedirect
 #add entry form
 from .forms import AttendeeModelForm
 
+#activate commit false
+from django.forms import modelformset_factory
+
 # index page
 def index(request):
     #return HttpResponse('Hello, World!')
@@ -20,8 +23,11 @@ def wedding(request):
         
         # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
+
+            #register data
+            model = form.save(commit=False)
+            model.save()
+            
             # redirect to a new URL:
             return HttpResponseRedirect('/thanks/')
 

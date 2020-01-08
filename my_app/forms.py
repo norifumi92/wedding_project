@@ -39,7 +39,7 @@ class AttendeeModelForm(ModelForm):
             'first_name': forms.TextInput(attrs={'placeholder': 'Name'}),
             'gender': forms.Select(choices=GENDER_OPTIONS),
             'nationality': forms.Select(choices=COUNTRY_OPTIONS),
-            'meal_preference': forms.Select(choices=COUNTRY_OPTIONS)
+            'meal_preference': forms.Select(choices=MEAL_OPTIONS)
         }
         labels = {
             'phone_number': 'Phone Number (Whatsapp)',
