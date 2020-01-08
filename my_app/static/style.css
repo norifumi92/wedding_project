@@ -166,3 +166,8 @@ h1,h2 {
         color: white;
     }
 
+    .field {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
