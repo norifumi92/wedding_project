@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body>
-    <img src="{% static 'img/tickmark.png' %}" class="animated pulse" alt="SUCCESS!">
+<div class="container-fluid fixed-bg">
+    <div class="scroll-bg">
+        <div class="row justify-content-center">
+        <img src="{% static 'img/tickmark.png' %}" id="tickmark" class="animated pulse" alt="SUCCESS!">
+        </div>
+        <div class="row justify-content-center">
+        <h2>Thanks!</h2><br>
+        </div>
+        <div class="row justify-content-center message-section">
+        <p>The form was successfully submitted.</br>
+        See you soon!
+        </p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

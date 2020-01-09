@@ -171,4 +171,20 @@ h1,h2 {
         margin-right: 10%;
     }
 
+    #tickmark{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: auto;
+    }
+
+    .message-section {
+        padding-left: auto;
+        padding-right: auto;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+
 
