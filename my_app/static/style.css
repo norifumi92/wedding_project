@@ -93,7 +93,6 @@ h1,h2 {
     .bg02 {
         background-image: url( '/static/img/background.jpg' );
     }
-
     .scroll-bg-letter {
         width:96%;
         outline: 1px solid 	#C5B358; 
@@ -109,20 +108,27 @@ h1,h2 {
         color: #888888;
         background-color: white;
     }
-    .letter-pudding {
+    .letter-padding {
         position: relative;
         height:200px;
+        background-image: url( '/static/img/flower.png' );
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .letter-header {
-        font-family: 'Kaushan Script', cursive;
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 20%;
+        padding-right: 20%;
+        position: relative;
+        max-width: 600px;
         text-align: center;
     }
     .letter-section {
         font-family: 'Kaushan Script', cursive;
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 20%;
+        padding-right: 20%;
+        max-width: 600px;
+        position: relative;
         margin-bottom: 10px;
         text-align: center;
     }
@@ -169,6 +175,7 @@ h1,h2 {
     .field {
         margin-left: 10%;
         margin-right: 10%;
+        display: absolute;
     }
 
     #tickmark{
@@ -185,6 +192,28 @@ h1,h2 {
         margin-bottom: 10px;
         text-align: center;
     }
-
-
-
+    
+    select{
+        outline:none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        background: none transparent;
+        vertical-align: middle;
+        font-size: inherit;
+        color: inherit;
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+    }
+    select option{
+      background-color: #fff;
+      color: #333;
+    }
+    select::-ms-expand {
+      display: none;
+    }
+    select:-moz-focusring { 
+      color: transparent; 
+      text-shadow: 0 0 0 #828c9a;
+    }
+    
