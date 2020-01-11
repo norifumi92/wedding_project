@@ -9,6 +9,9 @@ from .forms import AttendeeModelForm
 #activate commit false
 from django.forms import modelformset_factory
 
+#import requests
+import requests
+
 # index page
 def index(request):
     #return HttpResponse('Hello, World!')
@@ -27,6 +30,21 @@ def wedding(request):
             #register data
             model = form.save(commit=False)
             model.save()
+
+            #Send message via Line Notify
+            url = "https://notify-api.line.me/api/notify"
+            token = "8F1U3P0vZH7iZ2pZosAiN9kyitXsxwMfXzUFXRdVqaw"
+
+            first_name = form.data['first_name']
+            last_name = form.data['last_name']
+            message = first_name+" " + last_name + " just submitted the form now. "
+
+            headers = {"Authorization" : "Bearer "+ token}
+            
+            payload = {"message" :  message}
+
+            #send message
+            requests.post(url ,headers = headers ,params=payload)
 
             # redirect to a new URL:
             return HttpResponseRedirect('/thanks')
