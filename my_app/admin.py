@@ -10,4 +10,4 @@ admin.site.index_title = "Welcome to Nori&Amira Wedding Admin Page!"
 # Register your models here.
 @admin.register(Attendee)
 class AttendeeAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'gender','nationality','meal_preference')
+    list_display = ('first_name', 'last_name', 'event', 'email', 'phone_number', 'gender','nationality','meal_preference')

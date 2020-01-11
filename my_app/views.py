@@ -33,6 +33,9 @@ def wedding(request):
 
     else:
         form = AttendeeModelForm()
+        #set default value into the form attributes
+        form.fields['event'].initial = 'wedding'
+
         #return HttpResponse('Hello, World!')
         return render(request, 'wedding.html', {'form': form})
 

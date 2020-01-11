@@ -36,6 +36,7 @@ class AttendeeModelForm(ModelForm):
         #select fields to be used
         fields = '__all__'
         widgets = {
+            'event': forms.HiddenInput(),
             'phone_number': forms.TextInput(attrs={'placeholder': 'Start from + Country Code'}),
             'gender': forms.Select(choices=GENDER_OPTIONS),
             'nationality': forms.Select(choices=COUNTRY_OPTIONS),

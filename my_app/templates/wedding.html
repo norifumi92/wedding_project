@@ -138,7 +138,9 @@
                 {% csrf_token %}
                 {% for field in form %}
                     <div class="row field">
+                        {% if field.label != 'Event' %}
                         <label for="{{ field.id_for_label }}" class="label">{{field.label}}</label>
+                        {% endif %}
                     </div>
                     <div class="row field">
                         {{ field }}
