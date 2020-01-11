@@ -61,3 +61,8 @@ def thanks(request):
     
     #render html
     return render(request, 'thanks.html')
+
+def reception(request):
+    
+    #render html
+    return render(request, 'reception.html')

@@ -22,10 +22,13 @@ from my_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #index route
-    path('',views.index, name="home"),
+    path('', views.index, name="home"),
     
     #wedding route
-    path('wedding',views.wedding, name="wedding"),
+    path('wedding', views.wedding, name="wedding"),
+
+    #reception route
+    path('reception', views.reception, name="reception"),
 
     #thanks route
     path('thanks', views.thanks, name="thanks")
