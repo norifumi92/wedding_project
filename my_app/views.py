@@ -58,11 +58,13 @@ def wedding(request):
         return render(request, 'wedding.html', {'form': form})
 
 def thanks(request):
-    
-    #render html
-    return render(request, 'thanks.html')
+    #if referer is None, redirect to the home page.    
+    referer = request.META.get('HTTP_REFERER')
+    if referer is None:
+            return HttpResponseRedirect('/')
+    else:
+        return render(request, 'thanks.html')
 
 def reception(request):
-    
     #render html
     return render(request, 'reception.html')
