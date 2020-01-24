@@ -14,6 +14,7 @@ GENDER_OPTIONS= [
 COUNTRY_OPTIONS= [
     ('', ''),
     ('Japan', 'Japan'),
+    ('Korea', 'Korea'),
     ('The United Sates', 'The United Sates'),
     ('Malaysia', 'Malaysia'),
     ('India', 'India'),
