@@ -94,19 +94,15 @@ h1,h2 {
         background-image: url( '/static/img/background.jpg' );
     }
     .scroll-bg-letter {
-        width:96%;
-        outline: 1px solid 	#C5B358; 
+        width:100%;
         outline-offset: -20px; 
-        padding:2%;
         max-width: 600px;
         margin-top: 10%;
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        height: 800px;
+        height: auto;
         border-radius: 6px;
-        color: #888888;
-        background-color: white;
     }
     .letter-padding {
         position: relative;
@@ -224,4 +220,9 @@ h1,h2 {
         top: 0;
         left: 0;
       }
+
+    .letter-image {
+        position: relative;
+        width: 100%;
+    }
     
