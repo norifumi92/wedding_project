@@ -228,4 +228,11 @@ h1,h2 {
         position: relative;
         width: 100%;
     }
+
+    .timeline {
+        padding-left: 10%;
+        width: 90%;
+        text-align: left;
+        list-style-type: none;
+    }
     
