@@ -14,8 +14,7 @@ h1,h2 {
     height: 12%;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 .first-block{
@@ -230,10 +229,11 @@ h1,h2 {
         position: relative;
         width: 100%;
     }
-
-    .timeline {
-        padding-left: 10%;
-        width: 90%;
+    ul {
+        padding-left: 3%;
+    }
+    li {
+        width: 100%;
         text-align: left;
         list-style-type: none;
     }
