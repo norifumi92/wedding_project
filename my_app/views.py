@@ -12,6 +12,9 @@ from django.forms import modelformset_factory
 #import requests
 import requests
 
+#import generic functions
+from my_app.functions import  notifyViaLine
+
 # index page
 def index(request):
     #return HttpResponse('Hello, World!')
@@ -26,29 +29,17 @@ def wedding(request):
         
         # check whether it's valid:
         if form.is_valid():
-
             #register data
             model = form.save(commit=False)
             model.save()
-
-            #Send message via Line Notify
-            url = "https://notify-api.line.me/api/notify"
-            token = "8F1U3P0vZH7iZ2pZosAiN9kyitXsxwMfXzUFXRdVqaw"
-
+            #Get name
             first_name = form.data['first_name']
             last_name = form.data['last_name']
-            message = first_name+" " + last_name + " just submitted the form now. "
-
-            headers = {"Authorization" : "Bearer "+ token}
-            
-            payload = {"message" :  message}
-
-            #send message
-            requests.post(url ,headers = headers ,params=payload)
+            #Send message via Line Notify
+            notifyViaLine(first_name, last_name)
 
             # redirect to a new URL:
             return HttpResponseRedirect('/thanks')
-
     else:
         form = AttendeeModelForm()
         #set default value into the form attributes
@@ -66,5 +57,28 @@ def thanks(request):
         return render(request, 'thanks.html')
 
 def reception(request):
-    #render html
-    return render(request, 'reception.html')
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        form = AttendeeModelForm(request.POST)
+        
+        # check whether it's valid:
+        if form.is_valid():
+
+            #register data
+            model = form.save(commit=False)
+            model.save()
+            #Get name
+            first_name = form.data['first_name']
+            last_name = form.data['last_name']
+            #Send message via Line Notify
+            notifyViaLine(first_name, last_name)
+            
+            # redirect to a new URL:
+            return HttpResponseRedirect('/thanks')
+    else:
+        form = AttendeeModelForm()
+        #set default value into the form attributes
+        form.fields['event'].initial = 'reception'
+
+        #return HttpResponse('Hello, World!')
+        return render(request, 'reception.html', {'form': form})
