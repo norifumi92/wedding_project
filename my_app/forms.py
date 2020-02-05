@@ -11,19 +11,20 @@ GENDER_OPTIONS= [
     ('Female', 'Female'),
 ]
 
+#Space is not allowed or ValueError would occur.
 COUNTRY_OPTIONS= [
     ('', ''),
-    ('Japan', 'Japan'),
-    ('Korea', 'Korea'),
-    ('The United Sates', 'The United Sates'),
-    ('Malaysia', 'Malaysia'),
-    ('India', 'India'),
-    ('China', 'China'),
-    ('The Philippines', 'The Philippines'),
-    ('Indonesia', 'Indonesia'),
-    ('France', 'France'),
-    ('Poland', 'Poland'),
-    ('Laos', 'Laos'),
+    ('Japanese', 'Japanese'),
+    ('Korean', 'Korean'),
+    ('American', 'American'),
+    ('Malaysian', 'Malaysian'),
+    ('Indian', 'Indian'),
+    ('Chinese', 'Chinese'),
+    ('Filipino', 'Filipino'),
+    ('Indonesian', 'Indonesian'),
+    ('French', 'French'),
+    ('Polish', 'Polish'),
+    ('Lao', 'Lao'),
     ]
 
 MEAL_OPTIONS= [

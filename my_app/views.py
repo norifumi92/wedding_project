@@ -60,7 +60,8 @@ def reception(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         form = AttendeeModelForm(request.POST)
-        
+
+        print("form is submitted...")
         # check whether it's valid:
         if form.is_valid():
 
