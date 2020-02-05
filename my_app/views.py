@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 #import redirect
 from django.http import HttpResponseRedirect
+from django.http import HttpResponseNotFound
 
 #add entry form
 from .forms import AttendeeModelForm
@@ -61,7 +62,6 @@ def reception(request):
     if request.method == 'POST':
         form = AttendeeModelForm(request.POST)
 
-        print("form is submitted...")
         # check whether it's valid:
         if form.is_valid():
 
@@ -76,6 +76,9 @@ def reception(request):
             
             # redirect to a new URL:
             return HttpResponseRedirect('/thanks')
+
+        else:
+                return HttpResponseNotFound('<h1>Something was wrong. Contact Norifumi</h1>')  
     else:
         form = AttendeeModelForm()
         #set default value into the form attributes
